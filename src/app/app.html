@@ -1,0 +1,39 @@
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+  <div class="card card-modern p-4 text-center" style="width: 500px;">
+    
+    <div class="animal-display">
+      <span class="floating-pet">{{ getAnimalIcon() }}</span>
+    </div>
+
+    <h1 class="fw-bold mt-2 text-white">PetsMatch</h1>
+    <p class="text-white-50">Selecione a espécie e cadastre</p>
+
+    <form [formGroup]="petForm" (ngSubmit)="adicionarPet()" class="mt-4">
+      
+      <div class="mb-4 text-start">
+        <label class="text-white-50 small fw-bold mb-2">NOME DO PET</label>
+        <input type="text" formControlName="nome" class="form-control custom-input" placeholder="Digite o nome...">
+      </div>
+
+      <label class="text-white-50 small fw-bold mb-3 d-block text-start">ESPÉCIE</label>
+      <div class="species-grid mb-4">
+        <label class="species-card" *ngFor="let opt of especies">
+          <input type="radio" formControlName="especie" [value]="opt.nome" class="d-none">
+          <div class="card-content">
+            <span class="emoji">{{ opt.emoji }}</span>
+            <span class="label">{{ opt.nome }}</span>
+          </div>
+        </label>
+      </div>
+
+<button type="submit" class="btn-cadastrar" [disabled]="petForm.invalid">
+  <span> Cadastrar no Sistema</span>
+</button>
+    </form>
+<div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
+  <div *ngFor="let pet of pets" class="badge-pet-modern">
+    <span class="emoji-list">{{ pet.icone }}</span>
+    <span class="name-list">{{ pet.nome }}</span>
+  </div>
+</div>
+  </div>

@@ -1,0 +1,166 @@
+:host {
+ 
+  --primary-color: #2f1dd1d0;   
+  --secondary-color: #a452ca;  
+  --accent-color: #7f1518bc;
+  display: block;
+  min-height: 100vh;
+ 
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+.card-modern {
+  
+  background: rgba(135, 62, 223, 0.751); 
+  
+
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 24px;
+  
+
+  box-shadow: 0 8px 32px 0 rgba(104, 133, 231, 0.918),
+              inset 0 0 0 1px rgba(101, 132, 179, 0.566);
+              
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-modern:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(216, 162, 216, 0.763); 
+  box-shadow: 0 15px 45px rgba(217, 180, 254, 0.9), 
+              0 0 20px rgba(177, 141, 218, 0.632);
+}
+
+
+.floating-pet {
+  display: inline-block;
+  font-size: 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+  border: 2px solid #eeeeee;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 10px rgba(37, 117, 252, 0.2);
+}
+
+.btn-grad {
+  background: linear-gradient(to right, #8657b9 0%, #2575fc 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-grad:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+}
+
+.btn-cadastrar {
+  position: relative;
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  background: linear-gradient(400deg, #8c78f9, #5b04b9a5, #e6c3df, #a476d1);
+  background-size: 400%;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(143, 36, 210, 0.4);
+}
+
+
+.btn-cadastrar:hover:not(:disabled) {
+  animation: bg-move 8s linear infinite;
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgb(208, 182, 237);
+}
+
+@keyframes bg-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.btn-cadastrar:disabled {
+  background: rgba(186, 106, 233, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+  cursor: not-allowed;
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-cadastrar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(224, 191, 191, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn-cadastrar:hover::before {
+  left: 100%;
+}
+
+.badge-pet-modern {
+  background: rgba(255, 255, 255, 0.8); 
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.emoji-list {
+  font-size: 1.5rem;
+}
+
+.name-list {
+  font-weight: 700;
+  color: #333;
+  text-transform: capitalize;
+}
+
+/* Animação para o pet "nascer" na lista */
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,60 @@
+/* GRID DE SELEÇÃO */
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.species-card {
+  cursor: pointer;
+}
+
+.card-content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.species-card input:checked + .card-content {
+  background: linear-gradient(45deg, #00dbde22, #fc00ff22);
+  border-color: #ffffff86;
+  box-shadow: 0 0 15px rgba(85, 2, 86, 0.4);
+  transform: scale(1.05);
+}
+
+.card-content .emoji {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.card-content .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.species-card input:checked + .card-content .label {
+  color: #fff;
+}
+
+/* ESTILO DA LISTA */
+.badge-pet {
+  background: rgba(252, 0, 255, 0.2);
+  border: 1px solid #781c71;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 13px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
