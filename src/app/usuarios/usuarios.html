@@ -1,0 +1,86 @@
+<div class="container">
+
+<div class="card-modern p-4">
+
+<div class="d-flex align-items-center gap-2 mb-3">
+<span class="floating-pet">🐾</span>
+<h2>Cadastro de Usuários</h2>
+</div>
+
+<form (ngSubmit)="salvar()" class="row g-3">
+
+<div class="col-md-6">
+<label class="form-label">Nome</label>
+<input
+type="text"
+class="form-control"
+[(ngModel)]="usuario.nome"
+name="nome"
+required>
+</div>
+
+<div class="col-md-6">
+<label class="form-label">Email</label>
+<input
+type="email"
+class="form-control"
+[(ngModel)]="usuario.email"
+name="email"
+required>
+</div>
+
+<div class="col-12">
+<button
+type="submit"
+class="btn-cadastrar"
+[disabled]="!usuario.nome || !usuario.email">
+
+{{ editando ? 'Atualizar Usuário' : 'Cadastrar Usuário' }}
+
+</button>
+</div>
+
+</form>
+
+</div>
+
+<hr class="my-4">
+
+<h3 class="text-white mb-3">Lista de Usuários</h3>
+
+<div class="row g-3">
+
+<div
+class="col-md-4"
+*ngFor="let u of usuarios">
+
+<div class="badge-pet-modern d-flex justify-content-between">
+
+<div>
+<span class="emoji-list">👤</span>
+<span class="name-list">{{u.nome}}</span>
+</div>
+
+<div>
+
+<button
+class="btn btn-sm btn-warning me-2"
+(click)="editar(u)">
+Editar
+</button>
+
+<button
+class="btn btn-sm btn-danger"
+(click)="excluir(u.id)">
+Excluir
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
