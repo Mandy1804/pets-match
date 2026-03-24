@@ -1,0 +1,32 @@
+<div class="container py-5">
+  <div class="glass-card mx-auto" style="max-width: 500px;">
+    <h2 class="text-center mb-4">PetsMatch {{ getAnimalIcon() }}</h2>
+    
+    <form [formGroup]="petForm" (ngSubmit)="adicionar()">
+      <div class="mb-3">
+        <label class="form-label">Nome do Animal</label>
+        <input formControlName="nome" class="form-control" placeholder="Ex: Sheldon">
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Espécie</label>
+        <select formControlName="especie" class="form-select">
+          <option value="" disabled selected>Selecione...</option>
+          <option value="cao">Cão 🐶</option>
+          <option value="gato">Gato 🐱</option>
+          <option value="ave">Ave 🐦</option>
+          <option value="coelho">Coelho 🐰</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 fw-bold" [disabled]="petForm.invalid">CADASTRAR</button>
+    </form>
+
+    <div class="mt-5 d-flex flex-wrap gap-3 justify-content-center">
+      <div *ngFor="let p of pets" class="badge-pet">
+        <span style="font-size: 1.5rem;">{{ p.icone }}</span>
+        <strong style="color: #4c1d95;">{{ p.nome }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

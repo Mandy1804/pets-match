@@ -1,11 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { PetFormComponent } from './components/pet-form/pet-form.component'; 
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: true,
+  imports: [PetFormComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('pets-match');
-}
+export class App { }
