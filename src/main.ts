@@ -1,5 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { PetFormComponent } from './app/components/pet-form/pet-form.component';
+import { ProdutoFormComponent } from './app/components/produto-form/produto-form.component';
 
 
-bootstrapApplication(PetFormComponent).catch((err) => console.error(err));
+bootstrapApplication(ProdutoFormComponent).catch((err) => console.error(err));

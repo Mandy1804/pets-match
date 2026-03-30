@@ -1,24 +1,22 @@
-/* src/app/components/pet-form/pet-form.component.css */
 
-/* O Card com efeito de Vidro (Glassmorphism) */
 .glass-card {
-  background: rgba(255, 255, 255, 0.45); /* Fundo branco semi-transparente */
-  backdrop-filter: blur(15px); /* O SEGREDO: Desfoca o que está atrás */
-  -webkit-backdrop-filter: blur(15px); /* Suporte para Safari/iOS */
-  border-radius: 24px; /* Bordas bem arredondadas */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda fina e clara */
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); /* Sombra suave e espalhada */
+  background: rgba(255, 255, 255, 0.45); 
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px); 
+  border-radius: 24px; 
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); 
   padding: 2.5rem;
 }
 
-/* Título estilizado */
+
 h2 {
   font-weight: 800;
-  color: #4c1d95; /* Roxo escuro */
+  color: #4c1d95; 
   letter-spacing: -1px;
 }
 
-/* Inputs e Seletores modernos */
+
 .form-control, .form-select {
   border-radius: 12px;
   border: 1px solid #d1d5db;
@@ -41,7 +39,7 @@ h2 {
   letter-spacing: 1px;
 }
 
-/* Botão Principal com Gradiente e Efeito de Hover */
+
 .btn-primary {
   background: linear-gradient(45deg, #7c3aed, #4c1d95);
   border: none;

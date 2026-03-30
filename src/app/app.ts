@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { PetFormComponent } from './components/pet-form/pet-form.component'; 
+import { ProdutoFormComponent } from './components/produto-form/produto-form.component'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [PetFormComponent],
+  imports: [ProdutoFormComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
