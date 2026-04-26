@@ -1,12 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { PetshopComponent } from './petshop/petshop';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [PetshopComponent],
+  template: '<app-petshop></app-petshop>'
 })
-export class App {
-  protected readonly title = signal('petshop-app');
-}
+export class AppComponent {}

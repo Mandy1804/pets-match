@@ -1,0 +1,53 @@
+.container {
+  max-width: 1000px;
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.row {
+  justify-content: center;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+  width: 100%;
+  max-width: 260px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  height: 180px;
+  object-fit: cover;
+  transition: opacity 0.5s;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.preco {
+  font-weight: bold;
+  color: #6a11cb;
+  margin-bottom: 15px;
+}
+
+.btn {
+  border-radius: 8px;
+  font-size: 14px;
+}
