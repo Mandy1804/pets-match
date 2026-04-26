@@ -1,0 +1,78 @@
+<div class="container-fluid tela">
+
+  <div class="conteudo">
+
+    <h2 class="titulo">PetShop</h2>
+
+    <div class="row justify-content-center">
+
+      <div class="col-md-4">
+        <div class="card p-4 shadow">
+
+          <h5 class="mb-3">
+            {{ petSelecionado ? 'Editar Pet' : 'Novo Pet' }}
+          </h5>
+
+          <div *ngIf="!petSelecionado">
+            <input class="form-control mb-2" [(ngModel)]="novoPet.nome" placeholder="Nome">
+            <input class="form-control mb-2" [(ngModel)]="novoPet.tipo" placeholder="Tipo">
+            <input class="form-control mb-2" [(ngModel)]="novoPet.raca" placeholder="Raça">
+            <input class="form-control mb-3" type="number" [(ngModel)]="novoPet.idade" placeholder="Quantos anos">
+
+            <button class="btn btn-primary w-100" (click)="adicionar()">
+              Adicionar
+            </button>
+          </div>
+
+          <div *ngIf="petSelecionado">
+            <input class="form-control mb-2" [(ngModel)]="petSelecionado.nome">
+            <input class="form-control mb-2" [(ngModel)]="petSelecionado.tipo">
+            <input class="form-control mb-2" [(ngModel)]="petSelecionado.raca">
+            <input class="form-control mb-3" type="number" [(ngModel)]="petSelecionado.idade">
+
+            <button class="btn btn-success w-100 mb-2" (click)="atualizar()">
+              Salvar
+            </button>
+
+            <button class="btn btn-secondary w-100" (click)="cancelar()">
+              Cancelar
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-3 shadow">
+
+          <h5 class="mb-3 text-center">Lista</h5>
+
+          <div *ngFor="let pet of pets" class="item">
+
+            <div>
+              <strong>Nome:</strong> {{ pet.nome }} <br>
+              <strong>Tipo:</strong> {{ pet.tipo }} <br>
+              <strong>Raça:</strong> {{ pet.raca }} <br>
+              <strong>Quantos anos:</strong> {{ pet.idade }}
+            </div>
+
+            <div class="botoes">
+              <button class="btn btn-warning btn-sm" (click)="editar(pet)">
+                Editar
+              </button>
+
+              <button class="btn btn-danger btn-sm" (click)="deletar(pet.id)">
+                Excluir
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
