@@ -1,0 +1,44 @@
+<div class="container py-5">
+  <div class="glass-card mx-auto shadow" style="max-width: 500px;">
+    <h2 class="text-center mb-4 text-primary">Cadastro de Produto 🐾</h2>
+    
+    <form [formGroup]="produtoForm" (ngSubmit)="onSubmit()">
+      
+      <div class="mb-3">
+        <label class="form-label">Nome do Produto</label>
+        <input type="text" formControlName="nome" class="form-control" placeholder="Ex: Shampoo">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Preço Unitário</label>
+        <input type="number" formControlName="preco" class="form-control">
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Descrição Curta</label>
+        <textarea formControlName="descricao" class="form-control" rows="2"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 fw-bold" [disabled]="produtoForm.invalid">
+        SALVAR NO SISTEMA
+      </button>
+    </form>
+
+    <div class="mt-4 p-3 bg-light rounded border">
+      <small class="text-muted d-block mb-1">Inspeção de Estado (JSON):</small>
+      <pre style="font-size: 0.75rem;">{{ produtoForm.value | json }}</pre> [cite: 285]
+      <hr class="my-1">
+      <small>Status: {{ produtoForm.status }} | Válido: {{ produtoForm.valid }}</small> [cite: 287, 288]
+    </div>
+
+    <div class="mt-4">
+      <div *ngFor="let prod of produtos" class="p-2 mb-2 bg-white rounded shadow-sm border-start border-primary border-4">
+        <div class="d-flex justify-content-between">
+          <strong>{{ prod.nome }}</strong>
+          <span class="text-success fw-bold">R$ {{ prod.preco }}</span>
+        </div>
+        <small class="text-muted">{{ prod.descricao }}</small>
+      </div>
+    </div>
+  </div>
+</div>
